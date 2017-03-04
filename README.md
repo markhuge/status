@@ -7,7 +7,7 @@ Simple HTTP status check dashboard in terminal
 I needed this thing, and I didn't find one that did what I needed. Also it's fun making things.
 
 ## TODO
-- [] basic 200 check
+- [x] basic 200 check
 - [] config file
 - [] configurable status code
 - [] configurable check interval
