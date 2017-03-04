@@ -16,3 +16,10 @@ type Site struct {
 	// LastChecked is a timestamp of the last check run
 	LastChecked time.Time
 }
+
+// New is a constructor function for Site
+func New() *Site {
+	s := new(Site)
+	s.ExpectedStatusCode = 200
+	return s
+}
