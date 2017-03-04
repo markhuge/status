@@ -1,6 +1,8 @@
 // package site provides methods for initiating status checks against websites
 package site
 
+import "time"
+
 // Site models a website to check
 type Site struct {
 
@@ -12,5 +14,5 @@ type Site struct {
 	ExpectedStatusCode int
 
 	// LastChecked is a timestamp of the last check run
-	LastChecked Time
+	LastChecked time.Time
 }
