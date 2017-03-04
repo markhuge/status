@@ -14,3 +14,4 @@ I needed this thing, and I didn't find one that did what I needed. Also it's fun
 - [] colors
 - [] live config reload
 - [] notifications
+- [] ci
