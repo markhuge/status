@@ -18,8 +18,9 @@ type Site struct {
 }
 
 // New is a constructor function for Site
-func New() *Site {
+func New(url string) *Site {
 	s := new(Site)
 	s.ExpectedStatusCode = 200
+	s.URL = url
 	return s
 }
