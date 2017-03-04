@@ -8,7 +8,6 @@ func TestConstructor(t *testing.T) {
 
 	if defaults.ExpectedStatusCode != 200 {
 		t.Errorf("Defaults: StatusCode expected 200, got %d", defaults.ExpectedStatusCode)
-
 	}
 
 }
