@@ -1,0 +1,13 @@
+language: go
+
+go:
+  - 1.7
+
+before_install:
+  - got get -t -v github.com/gizak/termui
+
+script:
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
