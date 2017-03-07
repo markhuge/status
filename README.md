@@ -1,4 +1,5 @@
 # status
+[![Build Status](https://travis-ci.org/markhuge/status.svg?branch=master)](https://travis-ci.org/markhuge/status) [![codecov](https://codecov.io/gh/markhuge/status/branch/master/graph/badge.svg)](https://codecov.io/gh/markhuge/status) [![Go Report Card](https://goreportcard.com/badge/github.com/markhuge/status)](https://goreportcard.com/report/github.com/markhuge/status)
 
 Simple HTTP status check dashboard in terminal
 
