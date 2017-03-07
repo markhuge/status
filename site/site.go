@@ -1,4 +1,4 @@
-// package site provides methods for initiating status checks against websites
+// Package site provides methods for initiating status checks against websites
 package site
 
 import (
