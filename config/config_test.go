@@ -10,3 +10,13 @@ func TestRead(t *testing.T) {
 	}
 
 }
+
+func TestMissingFile(t *testing.T) {
+	defer func() {
+		err := recover()
+		if err == nil {
+			t.Errorf("Did not panic on invalid config file")
+		}
+	}()
+	Read("no_such_file.yml")
+}

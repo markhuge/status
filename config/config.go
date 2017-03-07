@@ -2,10 +2,7 @@
 package config
 
 import (
-	"fmt"
 	"io/ioutil"
-	"log"
-	"os"
 
 	yaml "gopkg.in/yaml.v2"
 )
@@ -26,7 +23,7 @@ type siteConfig struct {
 func Read(path string) *Config {
 	file, err := ioutil.ReadFile(path)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	c := new(Config)
 	err = yaml.Unmarshal(file, &c)
@@ -41,7 +38,6 @@ func Read(path string) *Config {
 // TODO make a better validator once I'm sure how config should be laid out
 func (c *Config) validate() {
 	if len(c.Sites) < 1 {
-		fmt.Printf("No valid config found at %s", c.Path)
-		os.Exit(1)
+		panic("No valid config found at " + c.Path)
 	}
 }
