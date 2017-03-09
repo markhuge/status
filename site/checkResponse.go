@@ -1,6 +1,9 @@
 package site
 
-import "time"
+import (
+	"strconv"
+	"time"
+)
 
 // CheckResponse represents the consumable output from Check() to be used
 // by views/reports
@@ -23,4 +26,32 @@ type CheckResponse struct {
 	AlertString string
 
 	// TODO AlertState int for Nagios-style compatibility
+}
+
+func (c *CheckResponse) String() []string {
+	return []string{
+		c.URL,
+		colorStatusCode(c.StatusCode),
+		c.ResponseTime.String(),
+		c.LastChecked.String(),
+	}
+}
+
+// TODO this relies on termui, so logic should move into views package
+// It's kind of a pain in the ass to do that now, so I'm okay with all the shame.
+func colorStatusCode(code int) string {
+	codeString := strconv.Itoa(code)
+
+	switch {
+
+	case code >= 200 && code <= 299:
+		return "[" + codeString + "](fg-green,bg-default)"
+
+	case code >= 300 && code <= 399:
+		return "[" + codeString + "](fg-yellow,bg-default)"
+
+	default:
+		return "[" + codeString + "](fg-black,bg-red)"
+	}
+
 }
