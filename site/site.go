@@ -25,7 +25,7 @@ type Site struct {
 // accepts a URL string as an argument
 func New(url string) *Site {
 	s := new(Site)
-	s.ExpectedStatusCode = 200
+	s.ExpectedStatusCode = 200 // TODO configurable
 	s.URL = url
 	return s
 }
