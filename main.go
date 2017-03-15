@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
-	"fmt"
 
 	"github.com/markhuge/status/config"
+	"github.com/markhuge/status/site"
+	"github.com/markhuge/status/views"
 )
 
 func main() {
@@ -13,6 +14,15 @@ func main() {
 	flag.Parse()
 
 	conf := config.Read(*configFile)
-	fmt.Printf("conf = %+v\n", conf)
 
+	var checks []*site.Site
+
+	for _, item := range conf.Sites {
+		checks = append(checks, site.New(item.URL))
+	}
+
+	table := views.NewTable(checks)
+
+	views.Init([]*views.Table{table})
+	table.Render()
 }
