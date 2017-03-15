@@ -29,10 +29,11 @@ type CheckResponse struct {
 }
 
 func (c *CheckResponse) String() []string {
+	formattedResponseTime := c.ResponseTime - (c.ResponseTime % time.Millisecond)
 	return []string{
 		c.URL,
 		colorStatusCode(c.StatusCode),
-		c.ResponseTime.String(),
+		formattedResponseTime.String(),
 		c.LastChecked.String(),
 	}
 }
