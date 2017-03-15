@@ -9,10 +9,10 @@ I needed this thing, and I didn't find one that did what I needed. Also it's fun
 
 ## TODO
 - [x] basic 200 check
-- [ ] config file
+- [x] config file
 - [ ] configurable status code
 - [ ] configurable check interval
-- [ ] colors
+- [x] colors
 - [ ] live config reload
 - [ ] notifications
 - [ ] ci
